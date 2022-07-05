@@ -1,11 +1,7 @@
-# Vite + React + Typescript + Eslint + Prettier + Sass
+###### CLUB SANDWICH
 
-A starter for React with Typescript with the fast Vite and all static code testing with Eslint and formatting with Prettier
+# GOODWICHS IS COMING SOON IN BTZ#
 
-## Installation
+Clone repo, install dependencies and run dev ;)
 
-Clone the repo and run `npm install`
-
-## Start
-
-After the successfull installation of the packages: `npm dev`
+See you!

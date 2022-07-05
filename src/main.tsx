@@ -1,16 +1,14 @@
-import './index.css';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
-import { CurrentUserContextProvider } from './contexts/CurrentUser';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CurrentUserContextProvider>
+    <Router>
       <App />
-    </CurrentUserContextProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root'),
 );

@@ -1,0 +1,16 @@
+.home {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgb(28 28 28/ 20%) 0%, rgb(25 25 25/ 70%) 100%);
+  &__description {
+    width: 43%;
+    margin-left: 3rem;
+    margin-bottom: -5rem;
+    &__club {
+      font-family: Made-Bold;
+      color: $secondary;
+    }
+  }
+}

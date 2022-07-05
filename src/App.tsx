@@ -1,48 +1,93 @@
 import './App.scss';
+import '../src/sass/global/_index.scss';
 
-import React, { useContext } from 'react';
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
-import AddressList from './components/AddressList';
-import Home from './components/Home';
-import Login from './components/Login';
-import TestContext from './components/TestContext';
-import { CurrentTestContextProvider } from './contexts/CurrentTest';
-import CurrentUserContext from './contexts/CurrentUser';
+import IPage from '../src/interfaces/IPage';
+// import Footer from './components/global/Footer';
+import Loader from './components/global/Loader';
+import Logo from './components/global/Logo';
+import Navbar from './components/global/Navbar';
+import Sound from './components/global/Sound';
+import Bisous from './pages/Bisous';
+import Club from './pages/Club';
+import Dealers from './pages/Dealers';
+import Home from './pages/Home';
+import Infos from './pages/Infos';
+import News from './pages/News';
+import Shop from './pages/Shop';
+import WallOfDwich from './pages/WallOfDwich';
 
-function App() {
-  const { id, logout, admin } = useContext(CurrentUserContext);
+const App = () => {
+  //retrieve the route (useLocation)
+  const location = useLocation();
+  // create displayBackground variable and set to boolean
+  let displayBackground: boolean = false;
 
-  return (
-    <div className="App">
-      <Router>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/address">Adresses</Link>
-          <Link to="/click">Click</Link>
-          {admin === true && <a href="http://localhost:3001/">Admin panel</a>}
-          {id === 0 ? (
-            <Link to="/login">Se connecter</Link>
-          ) : (
-            <button className="logout" onClick={() => logout()}>
-              Se déconnecter
-            </button>
-          )}
-        </nav>
-        <main>
-          <CurrentTestContextProvider>
-            <Routes>
-              <Route path="*" element={<Home />} />
-              <Route path="/" element={<Home />} />
-              <Route path="/click" element={<TestContext />} />
-              <Route path="/address" element={<AddressList onlyMine={id != 0} />} />
-              <Route path="/login" element={<Login />} />
-            </Routes>
-          </CurrentTestContextProvider>
-        </main>
-      </Router>
+  // this variable is true if location.pathname is either /, *, or /home
+  if (
+    location.pathname === '/' ||
+    location.key === 'default' ||
+    location.pathname === '/home'
+  ) {
+    displayBackground = true;
+  }
+
+  const [content, setContent] = useState<IPage>();
+
+  const getContent = async () => {
+    const url: string = `http://localhost:3000/api/pages/5`;
+    const { data } = await axios.get<IPage>(url);
+    setContent(data);
+  };
+
+  useEffect(() => {
+    getContent();
+  }, []);
+
+  const [loading, setLoading] = useState<boolean>(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+  return loading ? (
+    <div className="loadingGif">
+      <Loader />
+    </div>
+  ) : (
+    <div
+      className="App"
+      // only display background image if displayBackground is true
+      style={
+        displayBackground
+          ? {
+              backgroundImage: `url(${content?.image1})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }
+          : {}
+      }>
+      <Sound />
+      <Logo />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/club" element={<Club />} />
+        <Route path="/dealers" element={<Dealers />} />
+        <Route path="/wallofdwich" element={<WallOfDwich />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/infos" element={<Infos />} />
+        <Route path="/bisous" element={<Bisous />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+      {/* <Footer /> */}
     </div>
   );
-}
+};
 
 export default App;

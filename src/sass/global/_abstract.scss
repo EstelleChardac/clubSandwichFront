@@ -1,0 +1,25 @@
+:root {
+  font-size: 16px;
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    font-size: 10px;
+  }
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1024px) and (max-width: 1224px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1224px) and (max-width: 1824px) {
+    font-size: 18px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}

@@ -1,0 +1,79 @@
+// SHOPPING CARD = 1 ITEM //
+.card {
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  margin: 0.5rem;
+  height: 9rem;
+  width: 7rem;
+  @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+    height: 15.5rem;
+    width: 14rem;
+    margin: 1rem 0.2rem;
+  }
+  @media only screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+    height: 14.5rem;
+    width: 13rem;
+    margin: 1rem 0.5rem;
+  }
+  @media only screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-largest) {
+    height: 15.5rem;
+    width: 13.8rem;
+    margin: 1rem 0.5rem;
+  }
+  @media only screen and (min-width: $breakpoint-largest) and (max-width: $breakpoint-extralarge) {
+    // $breakpoint-largest: 1024px --- $breakpoint-extralarge: 1224px;
+    height: 13rem;
+    width: 12rem;
+  }
+  @media only screen and (min-width: $breakpoint-extralarge) {
+    // $breakpoint-extralarge: 1224px --- ++
+    height: 12rem;
+    width: 10.5rem;
+  }
+
+  // Image de cet item //
+  &__img {
+    opacity: 1;
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+  }
+  // Conteneur du bouton "en savoir plus" //
+  &__fadebox {
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    // Bouton "en savoir plus" //
+    &__button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: $secondary;
+      font-family: 'Made-Bold';
+      font-size: 1.2rem;
+      border: 2px solid $secondary;
+      width: 8rem;
+      height: 3rem;
+      &--line2 {
+        font-size: 0.5rem;
+        font-family: 'Made-Medium';
+      }
+    }
+  }
+  // Au hover, opacifier l'image //
+  &.card:hover .card__img {
+    opacity: 0.3;
+  }
+  // Pour faire apparaître le bouton //
+  &.card:hover .card__fadebox {
+    opacity: 1;
+  }
+}

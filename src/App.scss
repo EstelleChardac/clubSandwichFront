@@ -1,7 +1,34 @@
-@import 'sass/_variables.scss';
-@import 'sass/_abstract.scss';
-@import 'sass/_typography.scss';
-@import 'sass/_index.scss';
-@import 'sass/_address.scss';
-@import 'sass/_login.scss';
-@import 'sass/_nav.scss';
+@import 'sass/global/abstract';
+@import 'sass/global/variables';
+@import 'sass/global/index';
+@import 'sass/global/typography';
+//--------------GLOBAL---------------------------
+@import 'sass/global/logo';
+@import 'sass/global/footer';
+@import 'sass/global/loader';
+@import 'sass/global/button';
+@import 'sass/global/sound';
+@import 'sass/global/scrollDown';
+@import 'sass/global/nav';
+//--------------HOME-----------------------------
+@import 'sass/home/home';
+@import 'sass/home/homeContent';
+//--------------NEWS-----------------------------
+@import 'sass/news/news';
+@import 'sass/news/newsContent';
+//--------------CLUB-----------------------------
+@import 'sass/club/club';
+@import 'sass/club/clubSection';
+//--------------SHOP-----------------------------
+@import 'sass/shop/shop';
+@import 'sass/shop/shoppingList';
+@import 'sass/shop/shoppingCard';
+@import 'sass/shop/shoppingModal';
+//--------------INFOS----------------------------
+@import 'sass/infos/infos';
+@import 'sass/infos/infosContent';
+//--------------DEALERS--------------------------
+@import 'sass/dealers/dealers';
+@import 'sass/dealers/dealersSection';
+//--------------WALLOFDWHICH---------------------
+//--------------BISOUS---------------------------

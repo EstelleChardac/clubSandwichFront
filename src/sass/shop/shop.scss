@@ -1,0 +1,90 @@
+// $breakpoint-extralarge: 1224px;
+// $breakpoint-largest: 1024px;
+// $breakpoint-medium: 768px;
+// $breakpoint-small: 480px;
+// $breakpoint-smallest: 320px;
+//-----------------------------------
+// PAGE SHOP //
+.shop {
+  height: 100%;
+  width: 100vw;
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  @media only screen and (min-width: $breakpoint-small) {
+    height: 100vh;
+  }
+  // Texte qui apparait au format desktop uniquement //
+  &__h1 {
+    font-family: 'Made-Bold';
+    display: none;
+    color: $secondary;
+    @media only screen and (min-width: $breakpoint-largest) {
+      margin-left: 15rem;
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    // Deuxième ligne qui apparait au format desktop uniquement //
+    &__line2 {
+      display: none;
+      @media only screen and (min-width: $breakpoint-largest) {
+        font-size: 3.5rem;
+        display: flex;
+      }
+      // "coucou" qui apparait au format desktop uniquement //
+      &--green {
+        color: $tertiary;
+        padding-left: 1rem;
+      }
+    }
+  }
+  // Texte qui apparait au format mobile et tablette //
+  &__h2 {
+    width: 90%;
+    height: 4rem;
+    padding: 2rem 0;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: 'Made-Bold';
+    color: $primary;
+    text-shadow: $secondary 0.5px 0.5px, $secondary -0.5px 0.5px, $secondary -0.5px -0.5px,
+      $secondary 0.5px -0.5px;
+    font-size: 1.5rem;
+    justify-content: center;
+    @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+      font-size: 2.5rem;
+      height: 7rem;
+    }
+    @media only screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+      font-size: 3rem;
+      height: 8rem;
+    }
+    @media only screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-largest) {
+      width: 80%;
+      font-size: 3.5rem;
+      height: 8.5rem;
+    }
+    @media only screen and (min-width: $breakpoint-largest) {
+      display: none;
+    }
+    // Deuxième ligne qui apparait au format mobile et tablette //
+    &__line2 {
+      font-size: 0.4rem;
+      color: $secondary;
+      text-shadow: none;
+      font-family: 'Made-Medium';
+      @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+        font-size: 30%;
+      }
+      @media only screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-largest) {
+        font-size: 35%;
+      }
+    }
+  }
+}

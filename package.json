@@ -2,28 +2,33 @@
   "name": "vite-reactts-eslint-prettier",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3001",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
     "lint": "npm run lint:format && npm run lint:fix ",
     "type-check": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install && chmod ug+x .husky/*"
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "install": "^0.13.0",
+    "npm": "^8.12.2",
     "react": "^17.0.2",
     "react-cookie": "^4.1.1",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.4.0",
+    "react-player": "^2.10.1",
     "react-router-dom": "^6.2.1",
-    "sass": "^1.52.1"
+    "sass": "^1.52.1",
+    "swiper": "^8.2.6"
   },
   "devDependencies": {
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
-    "@typescript-eslint/parser": "^4.28.2",
+    "@typescript-eslint/parser": "^5.28.0",
     "@vitejs/plugin-react-refresh": "^1.3.5",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
@@ -32,11 +37,11 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^7.0.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.3.2",
+    "prettier": "^2.7.1",
     "typescript": "^4.3.5",
-    "vite": "^2.4.1",
-    "husky": "^7.0.0"
+    "vite": "^2.4.1"
   },
   "pre-commit": "lint",
   "license": "MIT"

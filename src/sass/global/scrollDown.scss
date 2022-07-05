@@ -1,0 +1,20 @@
+.scrollDown {
+    position: absolute;
+    bottom: 5.5rem;
+    left: 0;
+    transform: rotate(-90deg) translateY(-3rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+&__img{
+    width: 1.2rem;
+}
+&__text {
+    font-size: 0.7rem;
+    padding-left: 0.6rem;
+    font-family: 'Made-Light';
+    color: white;
+    text-align: center;
+}
+}
