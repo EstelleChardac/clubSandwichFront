@@ -2,23 +2,26 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 import IPage from '../../interfaces/IPage';
+import IconSvg from '../global/IconSvg';
+import Navbar from '../global/Navbar';
 
+// FRONT-END INTERFACE REQUIRED //
 interface HomeContentProps {
   id: number;
 }
 
 const HomeContent = ({ id }: HomeContentProps) => {
-  // JE CRÉE UN USESTATE AFIN DE STOCKER LA DATA ISSU DE L'APPEL AXIOS DANS CONTENT
+  // I CREATE A USESTATE TO STORE THE DATA FROM THE AXIOS CALL //
   const [content, setContent] = useState<IPage>();
 
-  // APPEL API AXIOS
+  // CALL API AXIOS //
   const getContent = async () => {
-    const url: string = `http://localhost:3000/api/pages/${id}`;
+    const url: string = `${import.meta.env.VITE_API_URL}/api/pages/${id}`;
     const { data } = await axios.get<IPage>(url);
     setContent(data);
   };
 
-  // AU CHARGEMENT DU COMPOSANT, J'EXÉCUTE LA FONCTION GETCONTENT
+  // WHEN LOADING THE COMPONENT, I EXECUTE THE GETCONTENT FUNCTION //
   useEffect(() => {
     getContent();
   }, []);
@@ -26,13 +29,17 @@ const HomeContent = ({ id }: HomeContentProps) => {
   return (
     <>
       <div className="homeContent">
-        <div className="homeContent__subTitle">{content?.subTitle.toUpperCase()}</div>
+        <IconSvg myStyle="homeContent__iconCS" icon="logos-club-sandwich-logo" />
+        <div className="homeContent__subTitle">{content?.subTitle?.toUpperCase()}</div>
         <div className="homeContent__title">
           CLUB <br /> SANDWICH.
         </div>
+        <div className="homeContent__title__mobile">THE CLUB.</div>
       </div>
-      <div className="home__description">
-        <div className="home__description__club">{content?.description}</div>
+
+      <Navbar className="homeContent__navbar" />
+      <div className="homeContent__description">
+        <div className="homeContent__description__club">{content?.description}</div>
       </div>
     </>
   );

@@ -1,12 +1,14 @@
 .logo {
+  width: 100vw;
+  @media only screen and (max-width: $breakpoint-largest) {
+    display: none;
+  }
+
   &__logotype {
     position: fixed;
-    margin-top: -1rem;
-    width: 8rem;
-    height: 8rem;
-    margin: 2rem;
-    @media only screen and (max-width: $breakpoint-largest) {
-      display: none;
-    }
+    width: 7rem;
+    height: 7rem;
+    margin: 1.5rem;
+    color: $secondary;
   }
 }

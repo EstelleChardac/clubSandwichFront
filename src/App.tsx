@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
 import IPage from '../src/interfaces/IPage';
-// import Footer from './components/global/Footer';
 import Loader from './components/global/Loader';
 import Logo from './components/global/Logo';
 import Navbar from './components/global/Navbar';
@@ -24,7 +23,7 @@ const App = () => {
   //retrieve the route (useLocation)
   const location = useLocation();
   // create displayBackground variable and set to boolean
-  let displayBackground: boolean = false;
+  let homePage: boolean = false;
 
   // this variable is true if location.pathname is either /, *, or /home
   if (
@@ -32,13 +31,13 @@ const App = () => {
     location.key === 'default' ||
     location.pathname === '/home'
   ) {
-    displayBackground = true;
+    homePage = true;
   }
 
   const [content, setContent] = useState<IPage>();
 
   const getContent = async () => {
-    const url: string = `http://localhost:3000/api/pages/5`;
+    const url: string = `${import.meta.env.VITE_API_URL}/api/pages/41`;
     const { data } = await axios.get<IPage>(url);
     setContent(data);
   };
@@ -62,7 +61,7 @@ const App = () => {
       className="App"
       // only display background image if displayBackground is true
       style={
-        displayBackground
+        homePage
           ? {
               backgroundImage: `url(${content?.image1})`,
               backgroundPosition: 'center',
@@ -73,7 +72,9 @@ const App = () => {
       }>
       <Sound />
       <Logo />
-      <Navbar />
+
+      {!homePage && <Navbar className="navbar" />}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
@@ -85,7 +86,6 @@ const App = () => {
         <Route path="/bisous" element={<Bisous />} />
         <Route path="*" element={<Home />} />
       </Routes>
-      {/* <Footer /> */}
     </div>
   );
 };

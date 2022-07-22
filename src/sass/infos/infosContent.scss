@@ -1,552 +1,498 @@
+//continuer le responsive et la page blanche en bas de infos
+//good luck
+
 .infosContent {
-    height: 84vh;
+  height: 84vh;
+
+  @media only screen and (max-height: 660px) and (min-width: 1025px) {
+    height: 84%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transform: translateX(-10rem);
+    margin-top: 16vh;
+    width: 100vw;
+    z-index: 10;
 
     @media only screen and (max-height: 660px) and (min-width: 1025px) {
-        height: 84%;
+      margin-top: 5%;
     }
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        transform: translateX(-10rem);
-        margin-top: 16vh;
-        width: 100vw;
-        z-index: 5;
+    @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+      transform: inherit;
+      align-items: center;
+      background-color: $primary;
+      transform: translateY(-10rem);
+      height: 50vh;
+    }
 
-        @media only screen and (max-height: 660px) and (min-width: 1025px) {
-            margin-top: 5%;
-        }
+    @media only screen and (min-width: 480px) and (max-width: 820px) {
+      transform: inherit;
+      align-items: center;
+      background-color: $primary;
+      transform: translateY(-8rem);
+      height: 150%;
+    }
 
-        @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
-            transform: inherit;
-            align-items: center;
-            background-color: $primary;
-        }
+    @media only screen and (min-width: 820px) and (max-width: 1025px) {
+      transform: inherit;
+      align-items: center;
+      background-color: $primary;
+      transform: translateY(-4rem);
+      height: 150%;
+    }
 
-        @media only screen and (min-width: 480px) and (max-width: 820px) {
-            transform: inherit;
-            align-items: center;
-            background-color: $primary;
-        }
+    @media only screen and (min-width: 1025px) and (max-width: 1224px) {
+      transform: translateX(-9rem);
+    }
+
+    @media only screen and (min-width: 1224px) {}
+
+    &__h2 {
+      font-size: 1.9rem;
+      font-family: 'Made-Medium';
+      color: $secondary;
+
+      @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+        display: none;
+      }
+
+      @media only screen and (min-width: 480px) and (max-width: 820px) {
+        display: none;
+      }
+
+      @media only screen and (min-width: 820px) and (max-width: 1025px) {
+        display: none;
+      }
+
+      @media only screen and (min-width: 1025px) and (max-width: 1224px) {
+        font-size: 1.9rem;
+        font-family: 'Made-Medium';
+        color: $secondary;
+      }
+
+      @media only screen and (min-width: 1224px) {
+        font-size: 1.9rem;
+        font-family: 'Made-Medium';
+        color: $secondary;
+      }
+    }
+
+    &__h1 {
+      font-size: 4.5rem;
+      font-family: 'Made-Medium';
+      color: $secondary;
+      transform: translateX(-2.5rem);
+
+      @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+        display: none;
+      }
+
+      @media only screen and (min-width: 480px) and (max-width: 820px) {
+        display: none;
+      }
+
+      @media only screen and (min-width: 820px) and (max-width: 1025px) {
+        display: none;
+      }
+
+      @media only screen and (min-width: 1025px) and (max-width: 1224px) {
+        font-size: 4.5rem;
+        font-family: 'Made-Medium';
+        color: $secondary;
+        transform: translateX(-2.5rem);
+      }
+
+      @media only screen and (min-width: 1224px) {
+        font-size: 4.5rem;
+        font-family: 'Made-Medium';
+        color: $secondary;
+        transform: translateX(-2.5rem);
+      }
+
+      &__span {
+        font-size: 4.5rem;
+        font-family: 'Made-Medium';
+        color: $tertiary;
+
+        @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
+
+        @media only screen and (min-width: 480px) and (max-width: 820px) {}
 
         @media only screen and (min-width: 820px) and (max-width: 1025px) {
-            transform: inherit;
-            align-items: center;
-            background-color: $primary;
+          font-size: 3.7rem;
         }
 
         @media only screen and (min-width: 1025px) and (max-width: 1224px) {
-            transform: translateX(-9rem);
-        }
-
-        @media only screen and (min-width: 1224px) {}
-
-        &__h2 {
-            font-size: 1.9rem;
-            font-family: 'Made-Medium';
-            color: $secondary;
-
-            @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
-                display: none;
-            }
-
-            @media only screen and (min-width: 480px) and (max-width: 820px) {
-                display: none;
-            }
-
-            @media only screen and (min-width: 820px) and (max-width: 1025px) {
-                display: none;
-            }
-
-            @media only screen and (min-width: 1025px) and (max-width: 1224px) {
-                font-size: 1.9rem;
-                font-family: 'Made-Medium';
-                color: $secondary;
-            }
-
-            @media only screen and (min-width: 1224px) {
-                font-size: 1.9rem;
-                font-family: 'Made-Medium';
-                color: $secondary;
-            }
-        }
-
-        &__h1 {
-            font-size: 4.5rem;
-            font-family: 'Made-Medium';
-            color: $secondary;
-            transform: translateX(-2.5rem);
-
-            @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
-                display: none;
-            }
-
-            @media only screen and (min-width: 480px) and (max-width: 820px) {
-                display: none;
-            }
-
-
-            @media only screen and (min-width: 820px) and (max-width: 1025px) {
-                display: none;
-            }
-
-            @media only screen and (min-width: 1025px) and (max-width: 1224px) {
-                font-size: 4.5rem;
-                font-family: 'Made-Medium';
-                color: $secondary;
-                transform: translateX(-2.5rem);
-            }
-
-            @media only screen and (min-width: 1224px) {
-                font-size: 4.5rem;
-                font-family: 'Made-Medium';
-                color: $secondary;
-                transform: translateX(-2.5rem);
-            }
-
-            &__span {
-                font-size: 4.5rem;
-                font-family: 'Made-Medium';
-                color: $tertiary;
-
-                @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
-
-                @media only screen and (min-width: 480px) and (max-width: 820px) {}
-
-                @media only screen and (min-width: 820px) and (max-width: 1025px) {
-                    font-size: 3.7rem;
-                }
-
-                @media only screen and (min-width: 1025px) and (max-width: 1224px) {
-                    font-size: 3.7rem;
-                }
-
-                @media only screen and (min-width: 1224px) {
-                    font-size: 4.5rem;
-                    font-family: 'Made-Medium';
-                    color: $tertiary;
-                }
-            }
-        }
-
-        &__boxContainer {
-
-            transform: translateX(10rem);
-            z-index: 30;
-
-
-            @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 12rem;
-                transform: inherit;
-            }
-
-            @media only screen and (min-width: 480px) and (max-width: 820px) {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 12rem;
-                transform: inherit;
-            }
-
-            @media only screen and (min-width: 820px) and (max-width: 1025px) {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 12rem;
-                transform: inherit;
-            }
-
-            @media only screen and (min-width: 1025px) and (max-width: 1224px) {
-                margin-top: 3rem;
-                transform: translateX(8rem);
-            }
-
-            @media only screen and (min-width: 1224px) {
-                transform: translateX(10rem);
-            }
-
-            @media only screen and (max-height: 660px) and (min-width: 1025px) {
-                padding-bottom: 16%;
-            }
-
-            &__h1Mobile {
-
-                @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
-                    font-size: 2.6rem;
-                    font-family: 'Made-Bold';
-                    color: $primary;
-                    text-transform: uppercase;
-                    -webkit-text-stroke: 0.05rem $secondary;
-                }
-
-                @media only screen and (min-width: 480px) and (max-width: 820px) {
-                    font-size: 2.6rem;
-                    font-family: 'Made-Bold';
-                    color: $primary;
-                    text-transform: uppercase;
-                    -webkit-text-stroke: 0.05rem $secondary;
-                }
-
-                @media only screen and (min-width: 820px) and (max-width: 1025px) {
-                    font-size: 4rem;
-                    font-family: 'Made-Bold';
-                    color: $primary;
-                    text-transform: uppercase;
-                    -webkit-text-stroke: 0.05rem $secondary;
-                }
-
-                @media only screen and (min-width: 1025px) and (max-width: 1224px) {
-                    display: none;
-                }
-
-                @media only screen and (min-width: 1224px) {
-                    display: none;
-                }
-            }
-
-
-            &__h3 {
-                font-size: 1.9rem;
-                width: 43rem;
-                font-family: 'Made-Medium';
-                text-transform: uppercase;
-                color: $secondary;
-                margin-top: 3rem;
-
-                @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
-                    font-size: 1.5rem;
-                    width: 24rem;
-                    height: auto;
-                    text-align: left;
-                }
-
-                @media only screen and (min-width: 480px) and (max-width: 820px) {
-                    font-size: 1.5rem;
-                    width: 24rem;
-                    height: auto;
-                    text-align: left;
-                }
-
-                @media only screen and (min-width: 820px) and (max-width: 1025px) {
-                    font-size: 1.8rem;
-                    width: 40rem;
-                    height: auto;
-                    text-align: left;
-                }
-
-                @media only screen and (min-width: 1025px) and (max-width: 1224px) {
-                    font-size: 1.7rem;
-                    width: 38rem;
-                    font-family: 'Made-Medium';
-                    text-transform: uppercase;
-                    color: $secondary;
-                    margin-top: 3rem;
-                    text-align: justify;
-                }
-
-                @media only screen and (min-width: 1224px) {
-                    font-size: 1.9rem;
-                    width: 43rem;
-                    font-family: 'Made-Medium';
-                    text-transform: uppercase;
-                    color: $secondary;
-                    margin-top: 3rem;
-                }
-
-            }
-
-            &__select {
-                margin-top: 1.8rem;
-                border: solid 0.1rem $secondary ;
-                width: 24rem;
-                height: 3rem;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                background-color: #3f3f3f;
-                cursor: pointer;
-                z-index: 50;
-
-
-
-                @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
-                    margin-top: 4rem;
-                }
-
-                @media only screen and (min-width: 480px) and (max-width: 820px) {
-                    margin-top: 4rem;
-                }
-
-                @media only screen and (min-width: 820px) and (max-width: 1025px) {
-                    margin-top: 4rem;
-                }
-
-                @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
-
-                @media only screen and (min-width: 1224px) {}
-
-                &--active {
-                    margin-top: 1.8rem;
-                    border: solid 0.1rem $secondary ;
-                    width: 24rem;
-                    height: 3rem;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-around;
-                    align-items: center;
-                    background-color: $primary;
-                    cursor: pointer;
-                    z-index: 50;
-
-                    @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
-
-                    @media only screen and (min-width: 480px) and (max-width: 820px) {}
-
-                    @media only screen and (min-width: 820px) and (max-width: 1025px) {}
-
-                    @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
-
-                    @media only screen and (min-width: 1224px) {}
-                }
-
-
-
-                &__type {
-                    font-size: 1.4rem;
-                    font-family: 'Made-Medium';
-                    color: rgba(255, 255, 255, 0.605);
-
-                    @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
-
-                    @media only screen and (min-width: 480px) and (max-width: 820px) {}
-
-                    @media only screen and (min-width: 820px) and (max-width: 1025px) {}
-
-                    @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
-
-                    @media only screen and (min-width: 1224px) {}
-                }
-
-                &__arrow {
-                    transform: rotate(-90deg);
-                    font-size: 1.4rem;
-                    font-family: 'Made-Medium';
-                    color: $secondary;
-
-                    @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
-
-                    @media only screen and (min-width: 480px) and (max-width: 820px) {}
-
-                    @media only screen and (min-width: 820px) and (max-width: 1025px) {}
-
-                    @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
-
-                    @media only screen and (min-width: 1224px) {}
-                }
-            }
-
-
-            &__music {
-                text-transform: uppercase;
-                border-right: solid 0.1rem $secondary ;
-                border-left: solid 0.1rem $secondary ;
-                width: 24rem;
-                height: 2.8rem;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                font-size: 1rem;
-                cursor: pointer;
-                background-color: $primary;
-
-                @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
-
-                @media only screen and (min-width: 480px) and (max-width: 820px) {}
-
-                @media only screen and (min-width: 820px) and (max-width: 1025px) {}
-
-                @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
-
-                @media only screen and (min-width: 1224px) {}
-
-                &__a {
-                    text-decoration: none;
-                    color: $secondary;
-                    font-family: 'Made-Medium';
-
-                    @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
-
-                    @media only screen and (min-width: 480px) and (max-width: 820px) {}
-
-                    @media only screen and (min-width: 820px) and (max-width: 1025px) {}
-
-                    @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
-
-                    @media only screen and (min-width: 1224px) {}
-                }
-
-                &:hover {
-                    background-color: #3f3f3f;
-                }
-            }
-
-            &__kitchen {
-                text-transform: uppercase;
-                border: solid 0.1rem $secondary ;
-                width: 24rem;
-                height: 3rem;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                font-size: 1rem;
-                cursor: pointer;
-                background-color: $primary;
-
-                @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
-
-                @media only screen and (min-width: 480px) and (max-width: 820px) {}
-
-                @media only screen and (min-width: 820px) and (max-width: 1025px) {}
-
-                @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
-
-                @media only screen and (min-width: 1224px) {}
-
-                &__a {
-                    text-decoration: none;
-                    color: $secondary;
-                    font-family: 'Made-Medium';
-                }
-
-                &:hover {
-                    background-color: #3f3f3f;
-                }
-            }
-
-            &__a {
-                text-transform: uppercase;
-                margin-top: 1.8rem;
-                border: solid 0.1rem $secondary ;
-                width: 18rem;
-                height: 3rem;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                font-size: 0.7rem;
-                font-family: 'Made-Medium';
-                color: $secondary;
-                text-decoration: none;
-                background-color: $primary;
-
-                @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
-                    margin-top: 4rem;
-                    height: 6rem;
-                    font-size: 1.4rem;
-                    font-family: 'Made-Bold';
-                    text-align: center;
-                }
-
-                @media only screen and (min-width: 480px) and (max-width: 820px) {
-                    margin-top: 4rem;
-                    height: 6rem;
-                    font-size: 1.4rem;
-                    font-family: 'Made-Bold';
-                    text-align: center;
-                }
-
-                @media only screen and (min-width: 820px) and (max-width: 1025px) {
-                    margin-top: 4rem;
-                    height: 6rem;
-                    font-size: 1.4rem;
-                    font-family: 'Made-Bold';
-                    text-align: center;
-                }
-
-                @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
-
-                @media only screen and (min-width: 1224px) {}
-
-                &:hover {
-                    background-color: #3f3f3f;
-                }
-            }
-
-            &__logo {
-                @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
-                    width: 32rem;
-                    margin-top: 3rem;
-                    overflow: hidden;
-                }
-
-                @media only screen and (min-width: 480px) and (max-width: 820px) {
-                    width: 35rem;
-                    margin-top: 3rem;
-                    overflow: hidden;
-                }
-
-                @media only screen and (min-width: 820px) and (max-width: 1025px) {
-                    width: 35rem;
-                    margin-top: 3rem;
-                    overflow: hidden;
-                }
-
-                @media only screen and (min-width: 1025px) and (max-width: 1224px) {
-                    display: none;
-                }
-
-                @media only screen and (min-width: 1224px) {
-                    display: none;
-                }
-            }
-        }
-    }
-
-
-    &__img {
-        position: absolute;
-        width: 20rem;
-        z-index: 0;
-
-        @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
-            display: none;
-        }
-
-        @media only screen and (min-width: 480px) and (max-width: 820px) {
-            display: none;
-
-        }
-
-        @media only screen and (min-width: 820px) and (max-width: 1025px) {
-            display: none;
-        }
-
-        @media only screen and (min-width: 1025px) and (max-width: 1224px) {
-            position: absolute;
-            width: 15rem;
-            bottom: 0;
-            margin-left: 27vw;
-            z-index: 0;
+          font-size: 3.7rem;
         }
 
         @media only screen and (min-width: 1224px) {
-            position: absolute;
-            width: 18rem;
-            bottom: 0;
-            margin-left: 27vw;
-            z-index: 0;
+          font-size: 4.5rem;
+          font-family: 'Made-Medium';
+          color: $tertiary;
         }
-
-        @media only screen and (max-height: 660px) and (min-width: 1025px) {
-            display: none;
-        }
+      }
     }
 
+    &__boxContainer {
+      transform: translateX(10rem);
+      z-index: 20;
+
+      @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 12rem;
+        transform: translateY(-19rem);
+      }
+
+      @media only screen and (min-width: 480px) and (max-width: 820px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 12rem;
+        transform: translateY(-19rem);
+      }
+
+      @media only screen and (min-width: 820px) and (max-width: 1025px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 12rem;
+        transform: translateY(-19rem);
+      }
+
+      @media only screen and (min-width: 1025px) and (max-width: 1224px) {
+        margin-top: 3rem;
+        transform: translateX(8rem);
+      }
+
+      @media only screen and (min-width: 1224px) {
+        transform: translateX(10rem);
+      }
+
+      @media only screen and (max-height: 660px) and (min-width: 1025px) {
+        padding-bottom: 16%;
+      }
+
+      &__h1Mobile {
+        @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+          font-size: 2.6rem;
+          font-family: 'Made-Bold';
+          color: $primary;
+          text-transform: uppercase;
+          -webkit-text-stroke: 0.05rem $secondary;
+        }
+
+        @media only screen and (min-width: 480px) and (max-width: 820px) {
+          font-size: 2.6rem;
+          font-family: 'Made-Bold';
+          color: $primary;
+          text-transform: uppercase;
+          -webkit-text-stroke: 0.05rem $secondary;
+        }
+
+        @media only screen and (min-width: 820px) and (max-width: 1025px) {
+          font-size: 4rem;
+          font-family: 'Made-Bold';
+          color: $primary;
+          text-transform: uppercase;
+          -webkit-text-stroke: 0.05rem $secondary;
+        }
+
+        @media only screen and (min-width: 1025px) and (max-width: 1224px) {
+          display: none;
+        }
+
+        @media only screen and (min-width: 1224px) {
+          display: none;
+        }
+      }
+
+      &__h3 {
+        font-size: 1.9rem;
+        width: 43rem;
+        font-family: 'Made-Medium';
+        text-transform: uppercase;
+        color: $secondary;
+        margin-top: 3rem;
+
+        @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+          font-size: 1.5rem;
+          width: 24rem;
+          height: auto;
+          text-align: left;
+        }
+
+        @media only screen and (min-width: 480px) and (max-width: 820px) {
+          font-size: 1.5rem;
+          width: 24rem;
+          height: auto;
+          text-align: left;
+        }
+
+        @media only screen and (min-width: 820px) and (max-width: 1025px) {
+          font-size: 1.8rem;
+          width: 40rem;
+          height: auto;
+          text-align: left;
+        }
+
+        @media only screen and (min-width: 1025px) and (max-width: 1224px) {
+          font-size: 1.7rem;
+          width: 38rem;
+          font-family: 'Made-Medium';
+          text-transform: uppercase;
+          color: $secondary;
+          margin-top: 3rem;
+          text-align: justify;
+        }
+
+        @media only screen and (min-width: 1224px) {
+          font-size: 1.9rem;
+          width: 43rem;
+          font-family: 'Made-Medium';
+          text-transform: uppercase;
+          color: $secondary;
+          margin-top: 3rem;
+        }
+      }
+
+      &__select {
+        margin-top: 1.8rem;
+        border: solid 0.1rem $secondary;
+        width: 24rem;
+        height: 3rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #3f3f3f;
+        cursor: pointer;
+        z-index: 30;
+
+        @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+          margin-top: 4rem;
+        }
+
+        @media only screen and (min-width: 480px) and (max-width: 820px) {
+          margin-top: 4rem;
+        }
+
+        @media only screen and (min-width: 820px) and (max-width: 1025px) {
+          margin-top: 4rem;
+        }
+
+        @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
+
+        @media only screen and (min-width: 1224px) {}
+
+        &--active {
+          margin-top: 1.8rem;
+          border: solid 0.1rem $secondary;
+          width: 24rem;
+          height: 3rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+          background-color: $primary;
+          cursor: pointer;
+          z-index: 30;
+
+          @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
+
+          @media only screen and (min-width: 480px) and (max-width: 820px) {}
+
+          @media only screen and (min-width: 820px) and (max-width: 1025px) {}
+
+          @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
+
+          @media only screen and (min-width: 1224px) {}
+        }
+
+        &__type {
+          font-size: 1.4rem;
+          font-family: 'Made-Medium';
+          color: rgba(255, 255, 255, 0.605);
+
+          @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
+
+          @media only screen and (min-width: 480px) and (max-width: 820px) {}
+
+          @media only screen and (min-width: 820px) and (max-width: 1025px) {}
+
+          @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
+
+          @media only screen and (min-width: 1224px) {}
+        }
+
+        &__arrow {
+          transform: rotate(-90deg);
+          font-size: 1.4rem;
+          font-family: 'Made-Medium';
+          color: $secondary;
+
+          @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
+
+          @media only screen and (min-width: 480px) and (max-width: 820px) {}
+
+          @media only screen and (min-width: 820px) and (max-width: 1025px) {}
+
+          @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
+
+          @media only screen and (min-width: 1224px) {}
+        }
+      }
+
+      &__music {
+        text-transform: uppercase;
+        border-right: solid 0.1rem $secondary;
+        border-left: solid 0.1rem $secondary;
+        width: 24rem;
+        height: 2.8rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: $primary;
+
+        @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
+
+        @media only screen and (min-width: 480px) and (max-width: 820px) {}
+
+        @media only screen and (min-width: 820px) and (max-width: 1025px) {}
+
+        @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
+
+        @media only screen and (min-width: 1224px) {}
+
+        &__a {
+          text-decoration: none;
+          color: $secondary;
+          font-family: 'Made-Medium';
+
+          @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
+
+          @media only screen and (min-width: 480px) and (max-width: 820px) {}
+
+          @media only screen and (min-width: 820px) and (max-width: 1025px) {}
+
+          @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
+
+          @media only screen and (min-width: 1224px) {}
+        }
+
+        &:hover {
+          background-color: #3f3f3f;
+        }
+      }
+
+      &__kitchen {
+        text-transform: uppercase;
+        border: solid 0.1rem $secondary;
+        width: 24rem;
+        height: 3rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: $primary;
+
+        @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {}
+
+        @media only screen and (min-width: 480px) and (max-width: 820px) {}
+
+        @media only screen and (min-width: 820px) and (max-width: 1025px) {}
+
+        @media only screen and (min-width: 1025px) and (max-width: 1224px) {}
+
+        @media only screen and (min-width: 1224px) {}
+
+        &__a {
+          text-decoration: none;
+          color: $secondary;
+          font-family: 'Made-Medium';
+        }
+
+        &:hover {
+          background-color: #3f3f3f;
+        }
+      }
+
+      &__logo {
+        @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+          width: 32rem;
+          margin-top: 3rem;
+          overflow: hidden;
+        }
+
+        @media only screen and (min-width: 480px) and (max-width: 820px) {
+          width: 35rem;
+          margin-top: 3rem;
+          overflow: hidden;
+        }
+
+        @media only screen and (min-width: 820px) and (max-width: 1025px) {
+          width: 35rem;
+          margin-top: 3rem;
+          overflow: hidden;
+        }
+
+        @media only screen and (min-width: 1025px) and (max-width: 1224px) {
+          display: none;
+        }
+
+        @media only screen and (min-width: 1224px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 20rem;
+    z-index: 0;
+
+    @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+      display: none;
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 820px) {
+      display: none;
+    }
+
+    @media only screen and (min-width: 820px) and (max-width: 1025px) {
+      display: none;
+    }
+
+    @media only screen and (min-width: 1025px) and (max-width: 1224px) {
+      position: absolute;
+      width: 15rem;
+      bottom: 0;
+      margin-left: 27vw;
+      z-index: 0;
+    }
+
+    @media only screen and (min-width: 1224px) {
+      position: absolute;
+      width: 18rem;
+      bottom: 0;
+      margin-left: 27vw;
+      z-index: 0;
+    }
+
+    @media only screen and (max-height: 660px) and (min-width: 1025px) {
+      display: none;
+    }
+  }
 }

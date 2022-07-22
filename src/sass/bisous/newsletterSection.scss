@@ -1,0 +1,177 @@
+.newsletterSection {
+  width: 60vw;
+  height: 100vh;
+  margin-top: 6rem;
+  margin-right: 4rem;
+
+  @media only screen and (max-width: $breakpoint-largest) {
+    width: 75vw;
+  }
+
+  @media only screen and (min-width: $breakpoint-largest) and (max-width: $breakpoint-extralarge) {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    width: 59vw;
+  }
+
+  &__content {
+    font-family: 'Made-Bold';
+    color: $secondary;
+
+    &__outLine {
+      visibility: visible;
+      font-family: 'Made-Outline-Bold';
+      color: $secondary;
+      font-size: 3rem;
+      text-align: end;
+      padding-bottom: 12%;
+
+      @media only screen and (min-width: $breakpoint-largest) {
+        display: none;
+      }
+    }
+
+    &__title1 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+
+      @media only screen and (min-width: $breakpoint-largest) and (max-width: $breakpoint-extralarge) {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+      }
+    }
+
+    &__title2 {
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+      margin-bottom: 1rem;
+
+      @media only screen and (max-width: $breakpoint-small) {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+      }
+
+      @media only screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+      }
+
+      @media only screen and (min-width: $breakpoint-largest) and (max-width: $breakpoint-extralarge) {
+        font-size: 3.4rem;
+        line-height: 3.4rem;
+      }
+    }
+
+    &__title3 {
+      font-size: 3.5rem;
+      line-height: 3rem;
+      color: $tertiary;
+      margin-bottom: 1rem;
+
+      @media only screen and (min-width: $breakpoint-largest) and (max-width: $breakpoint-extralarge) {
+        font-size: 3rem;
+        line-height: 2rem;
+      }
+    }
+
+    &__text1 {
+      font-family: 'Made-Bold';
+      margin-bottom: 2rem;
+      line-height: 1.5rem;
+
+      @media only screen and (max-width: $breakpoint-small) {
+        line-height: 1.3rem;
+        text-align: justify;
+      }
+
+      @media only screen and (min-width: $breakpoint-extralarge) {
+        line-height: 1.3rem;
+      }
+    }
+
+    &__text2 {
+      font-family: 'Made-Bold';
+      margin-bottom: 2rem;
+      line-height: 1.7rem;
+
+      @media only screen and (max-width: $breakpoint-small) {
+        line-height: 1.3rem;
+        text-align: justify;
+      }
+
+      @media only screen and (min-width: $breakpoint-extralarge) {
+        line-height: 1.3rem;
+      }
+    }
+  }
+
+  &__form__group {
+    display: flex;
+    width: 100%;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__buttonNewsletter {
+      cursor: pointer;
+      background: transparent;
+      font-family: 'Made-Medium';
+      width: 60%;
+      color: $secondary;
+      border-color: $secondary;
+      border: 1;
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      padding: 8px 0;
+
+      @media only screen and (max-width: $breakpoint-small) {
+        width: 50%;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  &__form__field {
+    font-family: 'Made-Medium';
+    width: 90%;
+    border: 0;
+    border-bottom: 2px solid grey;
+    outline: 0;
+    font-size: 1.3rem;
+    color: $secondary;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    margin-right: 1rem;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      width: 100%;
+    }
+
+    &::placeholder {
+      color: grey;
+    }
+
+    @media only screen and (max-width: $breakpoint-small) {
+      text-align: center;
+    }
+  }
+
+  &__form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image-slice: 1;
+  }
+
+  /* reset input */
+  &__form__field {
+
+    &:required,
+    &:invalid {
+      box-shadow: none;
+    }
+  }
+}

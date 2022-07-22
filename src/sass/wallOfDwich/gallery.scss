@@ -1,0 +1,220 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  margin-top: 4rem;
+  height: 100%;
+
+  //TEXT SECTION
+  &__h1 {
+    font-size: 3.3rem;
+    color: white;
+    font-family: 'Made-bold';
+    width: 29rem;
+    line-height: 3rem;
+    transform: translateX(-5rem) translateY(-3rem);
+    z-index: 20;
+
+    @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+      display: none;
+    }
+
+    @media only screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+      display: none;
+    }
+
+    @media only screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-largest) {
+      display: none;
+    }
+
+    &__span {
+      font-size: 2rem;
+      color: white;
+      font-family: 'Made-bold';
+    }
+
+    &__span2 {
+      font-size: 4.5rem;
+      color: white;
+      font-family: 'Made-bold';
+      width: 23rem;
+      padding-left: 4rem;
+    }
+  }
+
+  &__h2Mobile {
+
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: 'Made-Bold';
+    color: $primary;
+    text-shadow: $secondary 0.5px 0.5px, $secondary -0.5px 0.5px,
+      $secondary -0.5px -0.5px, $secondary 0.5px -0.5px;
+    font-size: 1.5rem;
+    justify-content: center;
+    text-transform: uppercase;
+
+    @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+      font-size: 4rem;
+      transform: translateY(-5rem);
+    }
+
+    @media only screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+      font-size: 4rem;
+      transform: translateY(-5rem);
+    }
+
+    @media only screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-largest) {
+      width: 80%;
+      font-size: 4rem;
+      transform: translateY(-5rem);
+    }
+
+    @media only screen and (min-width: $breakpoint-largest) {
+      display: none;
+    }
+  }
+
+  //ALL GRID DIV SECTION
+  &__allGrid {
+    margin-top: -4rem;
+    transform: translateX(5rem);
+
+
+    @media only screen and (min-width: 0px) and (max-width: 1024px) {
+      transform: none;
+    }
+
+    @media only screen and (min-width: 1024px) and (max-width: 1224px) {
+      transform: translateX(4rem);
+    }
+
+    //ALL MOSAIC DIV SECTION
+    &__container {
+      display: grid;
+      grid-column-gap: 0.5rem;
+      grid-row-gap: 0.5rem;
+      width: 54rem;
+      gap: 0.5rem;
+      margin-top: 4.5rem;
+
+
+      @media only screen and (min-width: 0px) and (max-width: 1024px) {
+        width: 100vw;
+      }
+
+      @media only screen and (min-width: 1024px) and (max-width: 1169px) {
+        width: 48rem;
+      }
+
+      @media only screen and (min-width: 1170px) and (max-width: 1224px) {
+        width: 50rem;
+      }
+
+      @media only screen and (min-width: 1224px) and (max-width: 1354px) {
+        width: 50rem;
+      }
+
+      &__div {
+        position: relative;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &--1 {
+          grid-area: 1 / 1 / 5 / 4;
+        }
+
+        &--2 {
+          grid-area: 5 / 1 / 10 / 4;
+        }
+
+        &--3 {
+          grid-area: 1 / 4 / 7 / 8;
+        }
+
+        &--4 {
+          grid-area: 7 / 4 / 10 / 8;
+        }
+
+        &--5 {
+          grid-area: 1 / 8 / 4 / 11;
+        }
+
+        &--6 {
+          grid-area: 4 / 8 / 7 / 11;
+        }
+
+        &--7 {
+          grid-area: 7 / 8 / 10 / 11;
+        }
+
+        & div {
+          opacity: 0;
+          position: absolute;
+          transition: 1s;
+
+          @media only screen and (min-width: 0px) and (max-width: 1024px) {
+            display: none;
+          }
+
+          & h2 {
+            font-family: 'Made-Medium';
+            color: white;
+            padding-bottom: 1rem;
+            font-size: 1.2rem;
+            opacity: 0;
+          }
+        }
+
+        &:hover div {
+          opacity: 1;
+          position: absolute;
+          z-index: 30;
+          transition: 1s;
+
+          & h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Made-Medium';
+            color: white;
+            padding-bottom: 1rem;
+            font-size: 1.2rem;
+            opacity: 1;
+            background-color: rgba(68, 68, 68, 0.655);
+            border-radius: 12px;
+            text-align: center;
+            padding: 1rem 1rem 1rem 1rem;
+            margin: 0 1rem 0 1rem;
+          }
+        }
+
+        & img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          transition: 1s;
+          z-index: 10;
+        }
+
+        &:hover img {
+          filter: brightness(0.5);
+          transition: 1s;
+
+          @media only screen and (min-width: 0px) and (max-width: 1024px) {
+            filter: none;
+            transition: none;
+          }
+        }
+      }
+    }
+
+
+  }
+}

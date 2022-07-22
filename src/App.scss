@@ -9,7 +9,7 @@
 @import 'sass/global/button';
 @import 'sass/global/sound';
 @import 'sass/global/scrollDown';
-@import 'sass/global/nav';
+@import 'sass/global/navbar';
 //--------------HOME-----------------------------
 @import 'sass/home/home';
 @import 'sass/home/homeContent';
@@ -31,4 +31,8 @@
 @import 'sass/dealers/dealers';
 @import 'sass/dealers/dealersSection';
 //--------------WALLOFDWHICH---------------------
+@import 'sass/wallOfDwich/wallOfDwich.scss';
+@import 'sass/wallOfDwich/gallery.scss';
 //--------------BISOUS---------------------------
+@import 'sass/bisous/newsletter';
+@import 'sass/bisous/newsletterSection';

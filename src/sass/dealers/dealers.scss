@@ -2,4 +2,47 @@
   height: 100%;
   width: 100vw;
   overflow: hidden;
+
+  @media only screen and (min-width: 320px) and (max-width: 479px) {
+    &__outLine {
+      visibility: visible;
+      font-family: 'Made-Outline-Bold';
+      color: $secondary;
+      font-size: 4rem;
+      margin-left: 40%;
+      padding-top: 2%;
+    }
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    &__outLine {
+      visibility: visible;
+      font-family: 'Made-Outline-Bold';
+      color: $secondary;
+      font-size: 4rem;
+      margin-left: 40%;
+      padding-top: 2%;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    &__outLine {
+      visibility: visible;
+      font-family: 'Made-Outline-Bold';
+      color: $secondary;
+      font-size: 4rem;
+      margin-left: 60%;
+      padding-top: 2%;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) and (max-width: 1223px) {
+    &__outLine {
+      visibility: hidden;
+    }
+  }
+  @media only screen and (min-width: 1224px) {
+    &__outLine {
+      visibility: hidden;
+    }
+  }
 }

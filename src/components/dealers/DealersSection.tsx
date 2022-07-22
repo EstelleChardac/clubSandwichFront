@@ -6,7 +6,7 @@ import ISupplier from '../../interfaces/ISupplier';
 
 interface DealersSectionProps {
   id: number;
-  idSupplier: number;
+  idSupplier?: number;
 }
 
 const DealersSection = ({ id, idSupplier }: DealersSectionProps) => {
@@ -16,14 +16,16 @@ const DealersSection = ({ id, idSupplier }: DealersSectionProps) => {
 
   // APPEL API AXIOS POUR 1 SECTION
   const getPage = async () => {
-    const dealersPage = await axios.get<IPage>(`http://localhost:3000/api/pages/${id}`);
+    const dealersPage = await axios.get<IPage>(
+      `${import.meta.env.VITE_API_URL}/api/pages/${id}`,
+    );
     setPage(dealersPage.data);
   };
 
   // APPEL API AXIOS POUR 1 SUPPLIER RELIÉ À 1 SECTION
   const getSupplier = async () => {
     const supplierContent = await axios.get<ISupplier>(
-      `http://localhost:3000/api/suppliers/${idSupplier}`,
+      `${import.meta.env.VITE_API_URL}/api/suppliers/${idSupplier}`,
     );
     setSupplier(supplierContent.data);
   };
@@ -36,12 +38,10 @@ const DealersSection = ({ id, idSupplier }: DealersSectionProps) => {
 
   return (
     <div className="dealersSection">
-      {page && supplier && (
+      {page && (
         <>
           <div className="dealersSection__text">
             <h2 className="dealersSection__text__subTitle">{page.subTitle}</h2>
-            <h2 className="dealersSection__text__sectionTitle">dealers</h2>
-            <h2 className="dealersSection__text__outLine">LOCALS</h2>
             <h1 className="dealersSection__text__title">{page.title}</h1>
           </div>
           <div className="dealersSection__supplier">
@@ -51,9 +51,9 @@ const DealersSection = ({ id, idSupplier }: DealersSectionProps) => {
               alt={page.title}
             />
             <div className="dealersSection__supplier__infos">
-              <h3 className="dealersSection__supplier__infos__name">{supplier.name}</h3>
+              <h3 className="dealersSection__supplier__infos__name">{supplier?.name}</h3>
               <h4 className="dealersSection__supplier__infos__location">
-                {supplier.location}
+                {supplier?.location}
               </h4>
             </div>
           </div>

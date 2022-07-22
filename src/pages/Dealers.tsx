@@ -1,42 +1,46 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-import DealersMobileSection from '../components/dealers/DealersMobileSection';
 import DealersSection from '../components/dealers/DealersSection';
+import Footer from '../components/global/Footer';
+import GoToTop from '../components/global/GoToTop';
+import ScrollDown from '../components/global/ScrollDown';
+import IPage from '../interfaces/IPage';
 
 const Dealers = () => {
-  // CREATING USESTATE TO DETECT WINDOW WIDTH (ABOUT MOBILE CAROUSSEL)
-  const [windowSize, setWindowSize] = useState(getWindowSize());
+  const [pages, setPage] = useState<IPage[]>();
 
-  // GETTING WINDOW SIZE WITH DESTRUCTURATION
-  function getWindowSize() {
-    const { innerWidth, innerHeight } = window;
-    return { innerWidth, innerHeight };
-  }
+  // CALL API AXIOS //
+  const getContent = async () => {
+    // CALL ITEM AXIOS.GET FROM THE URL INTERFACE //
+    const pages = await axios.get<IPage[]>(
+      `${import.meta.env.VITE_API_URL}/api/pageTypes/4/pages`,
+    );
 
-  // DETECTING WHEN COMPONENT MOUNT THE WIDTH OF THE WINDOW
+    // I USE MY USESTATE AND ITS DATA WITH THE SET //
+    setPage(pages.data);
+  };
+
+  // WHEN LOADING THE COMPONENT, I EXECUTE THE GETCONTENT FUNCTION //
   useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
+    getContent();
   }, []);
 
-  return windowSize.innerWidth >= 1023 ? (
+  return (
     <div className="dealers">
-      <DealersSection id={6} idSupplier={1} />
-      <DealersSection id={7} idSupplier={2} />
-      <DealersSection id={8} idSupplier={3} />
-      <DealersSection id={9} idSupplier={4} />
-      <DealersSection id={10} idSupplier={5} />
-    </div>
-  ) : (
-    <div>
-      <DealersMobileSection />
+      <ScrollDown />
+      <h2 className="dealers__outLine">LOCALS</h2>
+
+      {pages &&
+        pages.map((section) => (
+          <DealersSection
+            id={section.id}
+            idSupplier={section.idSupplier}
+            key={section.id}
+          />
+        ))}
+      <Footer className="footer" />
+      <GoToTop />
     </div>
   );
 };

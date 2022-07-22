@@ -1,17 +1,32 @@
 import React from 'react';
 
-import Logo from '../global/Logo';
+import IPage from '../../interfaces/IPage';
 
-const Gallery = () => {
+interface GalleryProps {
+  data: Array<IPage>;
+}
+
+const Gallery = ({ data }: GalleryProps) => {
   return (
-    <div>
-      <h2>IN DWICH WE TRUST</h2>
-      <div>
-        {' '}
-        Avec pleins d&apos;images
-        <Logo myStyle="icon icon--brille" icon="logos-brille" />
+    <>
+      <div className="gallery__allGrid">
+        <div className="gallery__allGrid__container">
+          {data &&
+            data.sort().map((image, index) => (
+              <div
+                className={`gallery__allGrid__container__div gallery__allGrid__container__div--${
+                  (index % 7) + 1
+                }`}
+                key={image.id}>
+                <div>
+                  <h2>{image.author}</h2>
+                </div>
+                <img src={image.image1} alt="imm1" />
+              </div>
+            ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

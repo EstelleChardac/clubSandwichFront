@@ -1,16 +1,18 @@
+// HOME PAGE //
 .home {
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, rgb(28 28 28/ 20%) 0%, rgb(25 25 25/ 70%) 100%);
-  &__description {
-    width: 43%;
-    margin-left: 3rem;
-    margin-bottom: -5rem;
-    &__club {
-      font-family: Made-Bold;
-      color: $secondary;
-    }
+  background: linear-gradient(180deg, rgb(28 28 28/ 30%) 0%, rgb(25 25 25/ 80%) 100%);
+  @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-medium) {
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+  }
+  @media only screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-largest) {
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 4rem;
   }
 }

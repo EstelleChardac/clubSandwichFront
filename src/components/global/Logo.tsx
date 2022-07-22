@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Icons from '../../../public/assets/logos.svg';
 
@@ -7,6 +8,10 @@ interface Props {
   myStyle?: string;
 }
 
+// SEULEMENT LE LOGO CLUB SANDWICH
+// VISIBLE SUR DESKTOP
+// SINON UTILISER LE COMPOSANT ICONSVG
+
 const Logo = ({
   icon = 'logos-club-sandwich-logo',
   myStyle = 'logo__logotype',
@@ -14,9 +19,11 @@ const Logo = ({
   return (
     <>
       <div className="logo">
-        <svg className={myStyle}>
-          <use xlinkHref={`${Icons}#${icon}`}></use>
-        </svg>
+        <NavLink to="/">
+          <svg className={myStyle}>
+            <use xlinkHref={`${Icons}#${icon}`}></use>
+          </svg>
+        </NavLink>
       </div>
     </>
   );

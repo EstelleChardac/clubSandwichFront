@@ -13,7 +13,7 @@ const ClubSection = ({ id }: ClubSectionProps) => {
 
   // APPEL API AXIOS
   const getContent = async () => {
-    const url: string = `http://localhost:3000/api/pages/${id}`;
+    const url: string = `${import.meta.env.VITE_API_URL}/api/pages/${id}`;
     const { data } = await axios.get<IPage>(url);
     setContent(data);
   };

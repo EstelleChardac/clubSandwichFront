@@ -19,12 +19,12 @@ const NewsContent = ({ id }: NewsContentProps) => {
   const getContent = async () => {
     //APPEL PROMESSE DE NEWSPAGE AXIOS.GET DE L'INTERFACE DE L'URL
     const newsPage = await axios.get<INewsPage>(
-      `http://localhost:3000/api/newsPages/${id}`,
+      `${import.meta.env.VITE_API_URL}/api/newsPages/${id}`,
     );
 
     //APPEL PROMESSE DE NEWSTYPE AXIOS.GET DE L'INTERFACE DE L'URL
     const newsType = await axios.get<INewsType>(
-      `http://localhost:3000/api/newsTypes/${newsPage.data.idNewsType}`,
+      `${import.meta.env.VITE_API_URL}/api/newsTypes/${newsPage.data.idNewsType}`,
     );
 
     setPage(newsPage.data);
@@ -52,7 +52,6 @@ const NewsContent = ({ id }: NewsContentProps) => {
           ) : (
             <img className="newsContent__img" src={page.image} alt={page.title} />
           )}
-
           <div className="newsContent__container">
             <div className="newsContent__container__header">
               <div className="newsContent__container__header__titleContainer">
@@ -73,6 +72,9 @@ const NewsContent = ({ id }: NewsContentProps) => {
                 <h4 className="newsContent__container__header__infosContainer__h4">
                   {page.title}
                 </h4>
+                <p className="newsContent__container__header__infosContainer__p">
+                  {page.description}
+                </p>
                 {isClicked ? (
                   <div className="newsContent__mobileContainer">
                     <p className="newsContent__mobileContainer__pMobile">
@@ -99,7 +101,6 @@ const NewsContent = ({ id }: NewsContentProps) => {
                 )}
               </div>
             </div>
-            <p className="newsContent__container__p">{page.description}</p>
           </div>
         </>
       )}

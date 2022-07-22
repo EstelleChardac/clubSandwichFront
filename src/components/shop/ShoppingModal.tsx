@@ -8,9 +8,9 @@ import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import IItem from '../../interfaces/IItem';
-import Logo from '../global/Logo';
+import IconSvg from '../global/IconSvg';
 
-//INTERFACE D'APPEL FRONT NÉCESSAIRE
+// FRONT-END INTERFACE REQUIRED //
 interface ShoppingModalProps {
   item: IItem;
   setModalToOpen: React.Dispatch<React.SetStateAction<number>>;
@@ -36,17 +36,18 @@ const ShoppingModal = ({ item, setModalToOpen }: ShoppingModalProps) => {
             onClick={() => setModalToOpen(-1)}
             onKeyPress={() => setModalToOpen(-1)}
             className="shoppingModal__containt__up__button--desktop">
-            <Logo
+            <IconSvg
               myStyle="shoppingModal__containt__up__button--desktop--logo"
               icon="logos-cross"
             />
           </div>
         </div>
         <div className="shoppingModal__containt__down">
+          {/* >> Carousel */}
           <Swiper
             className="shoppingModal__containt__down__carousel"
             loop
-            pagination={true}
+            pagination={{ clickable: true }}
             modules={[Pagination]}>
             <SwiperSlide>
               <img
@@ -63,7 +64,7 @@ const ShoppingModal = ({ item, setModalToOpen }: ShoppingModalProps) => {
               />
             </SwiperSlide>
           </Swiper>
-          {/* >> Description item */}
+          {/* >> Item Description  */}
           <p className="shoppingModal__containt__down__desc">{item?.description}</p>
           {/* >> Exit --> MOBILE */}
           <div

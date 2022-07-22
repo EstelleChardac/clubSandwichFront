@@ -1,12 +1,15 @@
 import React from 'react';
 
-import Gallery from '../components/wallOfDwich/Gallery';
+import Footer from '../components/global/Footer';
+import ScrollDown from '../components/global/ScrollDown';
+import GalleryList from '../components/wallOfDwich/GalleryList';
 
 const WallOfDwich = () => {
   return (
-    <div>
-      <h1>LE WALL OF DWICH MAMAMIA</h1>
-      <Gallery />
+    <div className="wallOfDwich">
+      <ScrollDown />
+      <GalleryList idPageType={5} />
+      <Footer className="footer__wallOfDwich" />
     </div>
   );
 };

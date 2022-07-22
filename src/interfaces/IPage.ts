@@ -1,8 +1,9 @@
 export default interface IPage {
-  title: string;
-  subTitle: string;
-  description: string;
-  image1: string;
+  id: number;
+  title?: string;
+  subTitle?: string;
+  description?: string;
+  image1?: string;
   image2?: string;
   image3?: string;
   backgroundImg?: string;
@@ -11,4 +12,6 @@ export default interface IPage {
   idUser?: number;
   idSupplier?: number;
   idAddress?: number;
+  idPageType?: number;
+  author?: string;
 }

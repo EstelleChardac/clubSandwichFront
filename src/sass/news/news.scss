@@ -1,3 +1,38 @@
 .news {
     height: 100%;
+    overflow: hidden;
+
+    &__h2Mobile {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-family: 'Made-Bold';
+        color: $primary;
+        text-shadow: $secondary 0.5px 0.5px, $secondary -0.5px 0.5px,
+            $secondary -0.5px -0.5px, $secondary 0.5px -0.5px;
+        font-size: 1.5rem;
+        justify-content: center;
+        text-transform: uppercase;
+
+        @media only screen and (min-width: $breakpoint-smallest) and (max-width: $breakpoint-small) {
+            font-size: 4rem;
+            transform: translateY(3rem);
+        }
+
+        @media only screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+            font-size: 4rem;
+            transform: translateY(3rem);
+        }
+
+        @media only screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-largest) {
+            width: 80%;
+            font-size: 4rem;
+            transform: translateY(3rem);
+        }
+
+        @media only screen and (min-width: $breakpoint-largest) {
+            display: none;
+        }
+    }
 }
