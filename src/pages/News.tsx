@@ -31,7 +31,7 @@ const News = () => {
       <ScrollDown />
       <h2 className="news__h2Mobile">ça part</h2>
       <span className="news__h2Mobile">de là</span>
-      {pages && pages.map((page) => <NewsContent id={page.id} key={page.id} />)}
+      {pages && pages.reverse().map((page) => <NewsContent id={page.id} key={page.id} />)}
       <Footer className="footer" />
       <GoToTop />
     </div>

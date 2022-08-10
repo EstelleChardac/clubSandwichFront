@@ -59,7 +59,10 @@ const NewsContent = ({ id }: NewsContentProps) => {
                   POP
                 </h1>
                 <h1 className="newsContent__container__header__titleContainer__h1__span">
-                  UP
+                  <span className="newsContent__container__header__titleContainer__h1__span__uLetter">
+                    U
+                  </span>
+                  P
                 </h1>
               </div>
               <div className="newsContent__container__header__infosContainer">

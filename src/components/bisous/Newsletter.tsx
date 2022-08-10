@@ -2,9 +2,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+// import { toast, ToastContainer } from 'react-toastify';
 
-import INewsletterSubscriber from '../../interfaces/INewsletterSubscriber';
+// import INewsletterSubscriber from '../../interfaces/INewsletterSubscriber';
 import IPage from '../../interfaces/IPage';
 
 interface NewsletterProps {
@@ -13,24 +13,24 @@ interface NewsletterProps {
 
 const Newsletter = ({ id }: NewsletterProps) => {
   // Defining the form inputs variables and functions and intializing them to blank
-  const [userMail, setUserMail] = useState<string>('');
+  // const [userMail, setUserMail] = useState<string>('');
   // JE CRÉE UN USESTATE AFIN DE STOCKER LA DATA ISSU DE L'APPEL AXIOS DANS CONTENT
   const [content, setContent] = useState<IPage>();
 
   // Appel API Axios pour ajouter le newsletter subscriber
-  const handleSubmitMail = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      await axios.post<INewsletterSubscriber>(
-        `${import.meta.env.VITE_API_URL}/api/newsletterSubscribers`,
-        { email: userMail },
-      );
-      setUserMail('');
-      toast('Vous êtes bien inscrit-e à la newsletter');
-    } catch (err) {
-      toast(`Désolé, l'inscription n'a pas fonctionné`);
-    }
-  };
+  // const handleSubmitMail = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axios.post<INewsletterSubscriber>(
+  //       `${import.meta.env.VITE_API_URL}/api/newsletterSubscribers`,
+  //       { email: userMail },
+  //     );
+  //     setUserMail('');
+  //     toast('Vous êtes bien inscrit-e à la newsletter');
+  //   } catch (err) {
+  //     toast(`Désolé, l'inscription n'a pas fonctionné`);
+  //   }
+  // };
 
   // APPEL API AXIOS
   const getContent = async () => {
@@ -55,13 +55,13 @@ const Newsletter = ({ id }: NewsletterProps) => {
           </h2>
           <h3 className="newsletterSection__content__title3">ET VOUS.</h3>
           <p className="newsletterSection__content__text1">{content?.description}</p>
-          <p className="newsletterSection__content__text2">
+          {/* <p className="newsletterSection__content__text2">
             Pour une dose mensuelle de news de Club Sandwich, on t&apos;invite à saisir ta
             plus belle adresse mail ci-dessous. Promis, on ne spam pas et ton mail ne sera
             utilisé que pour cela (t&apos;as vu ça rime). On t&apos;embrasse !
-          </p>
+          </p> */}
         </div>
-        <form
+        {/* <form
           className="newsletterSection__form__group field"
           autoComplete="off"
           onSubmit={(e) => handleSubmitMail(e)}>
@@ -96,7 +96,7 @@ const Newsletter = ({ id }: NewsletterProps) => {
             draggable
             pauseOnHover
           />
-        </form>
+        </form> */}
       </div>
     </>
   );

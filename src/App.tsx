@@ -14,7 +14,7 @@ import Bisous from './pages/Bisous';
 import Club from './pages/Club';
 import Dealers from './pages/Dealers';
 import Home from './pages/Home';
-import Infos from './pages/Infos';
+// import Infos from './pages/Infos';
 import News from './pages/News';
 import Shop from './pages/Shop';
 import WallOfDwich from './pages/WallOfDwich';
@@ -82,7 +82,7 @@ const App = () => {
         <Route path="/dealers" element={<Dealers />} />
         <Route path="/wallofdwich" element={<WallOfDwich />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/infos" element={<Infos />} />
+        {/* <Route path="/infos" element={<Infos />} /> */}
         <Route path="/bisous" element={<Bisous />} />
         <Route path="*" element={<Home />} />
       </Routes>
